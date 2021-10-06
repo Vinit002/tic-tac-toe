@@ -5,11 +5,7 @@ using namespace std;
 
 #define COMPUTER 1
 #define HUMAN 2
-
-#define SIDE 3 // Length of the board
-
-// Computer will move with 'O'
-// and human with 'X'
+#define SIDE 3
 #define COMPUTERMOVE 'O'
 #define HUMANMOVE 'X'
 
@@ -34,7 +30,7 @@ void showBoard(char board[][SIDE])
 void showInstructions()
 {
 	printf("\t\t\t Tic-Tac-Toe\n\n");
-	printf("Choose a cell numbered from 1 to 9 as below"
+	printf("Choose a number from 1 to 9 as below"
 			" and play\n\n");
 	
 	printf("\t\t\t 1 | 2 | 3 \n");
@@ -74,9 +70,9 @@ void initialise(char board[][SIDE], int moves[])
 }
 
 // A function to declare the winner of the game
-void declareWinner(int whoseTurn)
+void declareWinner(int Turn)
 {
-	if (whoseTurn == COMPUTER)
+	if (Turn == COMPUTER)
 		printf("COMPUTER has won\n");
 	else
 		printf("HUMAN has won\n");
@@ -85,9 +81,9 @@ void declareWinner(int whoseTurn)
 
 // A function that returns true if any of the row
 // is crossed with the same player's move
-bool rowCrossed(char board[][SIDE])
+bool rowCrossed(char board[][x])
 {
-	for (int i=0; i<SIDE; i++)
+	for (int i=0; i<x; i++)
 	{
 		if (board[i][0] == board[i][1] &&
 			board[i][1] == board[i][2] &&
@@ -99,9 +95,9 @@ bool rowCrossed(char board[][SIDE])
 
 // A function that returns true if any of the column
 // is crossed with the same player's move
-bool columnCrossed(char board[][SIDE])
+bool columnCrossed(char board[][x])
 {
-	for (int i=0; i<SIDE; i++)
+	for (int i=0; i<x; i++)
 	{
 		if (board[0][i] == board[1][i] &&
 			board[1][i] == board[2][i] &&
